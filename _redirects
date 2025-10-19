@@ -1,0 +1,33 @@
+# Cloudflare Pages 리다이렉트 규칙
+
+# HTTPS 강제 리다이렉트 (이미 Cloudflare에서 처리하지만 보조)
+http://your-domain.pages.dev/* https://your-domain.pages.dev/:splat 301!
+
+# 파일 확장자 없이 접근 허용
+/converter /index.html 200
+/webp-converter /index.html 200
+/image-converter /index.html 200
+
+# 구형 브라우저 지원 (폴백)
+/legacy /simple-converter.html 200
+
+# 에러 페이지 처리
+/404 /index.html 404
+/* /index.html 200
+
+# 보안 헤더 추가
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# 캐시 최적화
+/css/* 
+  Cache-Control: public, max-age=31536000, immutable
+  
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+  
+/images/*
+  Cache-Control: public, max-age=2592000

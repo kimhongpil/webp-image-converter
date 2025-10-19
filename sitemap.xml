@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- 메인 페이지 -->
+  <url>
+    <loc>https://your-domain.pages.dev/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    
+    <!-- 이미지 정보 -->
+    <image:image>
+      <image:loc>https://your-domain.pages.dev/og-image.jpg</image:loc>
+      <image:title>WebP 이미지 변환기</image:title>
+      <image:caption>무료 온라인 WebP, JPG, PNG, GIF 변환 도구</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- 추가 페이지들 (향후 확장시) -->
+  <!--
+  <url>
+    <loc>https://your-domain.pages.dev/about</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://your-domain.pages.dev/privacy</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  -->
+  
+</urlset>
