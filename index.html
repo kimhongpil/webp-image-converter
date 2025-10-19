@@ -25,15 +25,9 @@
     <!-- 파비콘 -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔄</text></svg>">
     
-    <!-- 외부 폰트 및 아이콘 -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    
-    <!-- Google AdSense 코드 (여기에 실제 AdSense 코드 삽입) -->
-
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3796109238388816"
+    <!-- Google AdSense 코드 (실제 발급 번호로 교체하세요) -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3796109238388816"
      crossorigin="anonymous"></script>
- 
     
     <!-- 구조화된 데이터 (SEO) -->
     <script type="application/ld+json">
@@ -54,620 +48,100 @@
     }
     </script>
 
+    <!-- 외부 폰트 및 아이콘 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- 기존 CSS 파일 + 추가 최적화 -->
+    <link rel="stylesheet" href="css/style.css">
+    
     <style>
-        /* CSS는 기존과 동일하지만 성능 최적화 적용 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --success-color: #48bb78;
-            --error-color: #f56565;
-            --warning-color: #ed8936;
-            --info-color: #4299e1;
-            --border-radius: 15px;
-            --shadow: 0 10px 40px rgba(0,0,0,0.1);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #2d3748;
-            background: var(--primary-gradient);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* 광고 영역 스타일 */
+        /* AdSense 광고 영역 전용 스타일 */
         .ad-container {
             max-width: 728px;
-            margin: 20px auto;
+            margin: 30px auto;
             text-align: center;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: var(--border-radius);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
             padding: 20px;
             backdrop-filter: blur(10px);
-            box-shadow: var(--shadow);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .ad-label {
             font-size: 0.8rem;
             color: #718096;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-weight: 500;
         }
 
-        /* 헤더 */
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            color: white;
-            position: relative;
+        /* 광고와 콘텐츠 사이 간격 */
+        .ad-spacing {
+            margin: 40px 0;
         }
 
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 100px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .header h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-shadow: 2px 4px 8px rgba(0,0,0,0.3);
-            background: linear-gradient(45deg, #fff, #e2e8f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .header .icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            display: block;
-            animation: rotate 10s linear infinite;
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
-            font-weight: 400;
-            opacity: 0.95;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateX(-50%) translateY(0px); }
-            50% { transform: translateX(-50%) translateY(-20px); }
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        /* 메인 변환기 영역 */
-        .converter-section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 25px;
-            padding: 50px;
-            box-shadow: 0 25px 80px rgba(0,0,0,0.15);
-            margin-bottom: 40px;
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        /* 업로드 영역 개선 */
-        .upload-area {
-            border: 3px dashed #667eea;
-            border-radius: var(--border-radius);
-            padding: 60px 40px;
-            text-align: center;
-            background: linear-gradient(135deg, #f8f9ff 0%, #e6f3ff 100%);
-            transition: var(--transition);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .upload-area::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.1), transparent);
-            transform: rotate(45deg);
-            transition: var(--transition);
-            opacity: 0;
-        }
-
-        .upload-area:hover::before {
-            animation: shimmer 1.5s ease-in-out;
-        }
-
-        .upload-area:hover {
-            border-color: #5a67d8;
-            background: linear-gradient(135deg, #f0f2ff 0%, #dbeafe 100%);
-            transform: translateY(-5px);
-            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
-        }
-
-        .upload-area.dragover {
-            border-color: #4c51bf;
-            background: linear-gradient(45deg, #e6f3ff, #f0f8ff);
-            transform: scale(1.02);
-        }
-
-        @keyframes shimmer {
-            0% { transform: rotate(45deg) translateX(-100%); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: rotate(45deg) translateX(100%); opacity: 0; }
-        }
-
-        .upload-icon {
-            font-size: 5rem;
-            color: #667eea;
-            margin-bottom: 25px;
-            display: block;
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-
-        .upload-area h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #4a5568;
-            font-weight: 600;
-        }
-
-        .upload-text {
-            font-size: 1.1rem;
-            color: #718096;
-            margin-bottom: 15px;
-        }
-
-        .file-limit {
-            font-size: 1rem;
-            color: #a0aec0;
-            margin-bottom: 30px;
-        }
-
-        /* 향상된 버튼 스타일 */
-        .btn {
-            padding: 15px 35px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            margin: 8px;
-            position: relative;
-            overflow: hidden;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: var(--transition);
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .upload-btn {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        }
-
-        .upload-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
-        }
-
-        .convert-btn {
-            background: linear-gradient(45deg, var(--success-color), #38a169);
-            color: white;
-            box-shadow: 0 8px 25px rgba(72, 187, 120, 0.4);
-        }
-
-        .convert-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(72, 187, 120, 0.6);
-        }
-
-        .download-btn {
-            background: linear-gradient(45deg, var(--info-color), #3182ce);
-            color: white;
-            box-shadow: 0 8px 25px rgba(66, 153, 225, 0.4);
-        }
-
-        .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(66, 153, 225, 0.6);
-        }
-
-        .reset-btn {
-            background: linear-gradient(45deg, var(--warning-color), #dd6b20);
-            color: white;
-            box-shadow: 0 8px 25px rgba(237, 137, 54, 0.4);
-        }
-
-        .reset-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(237, 137, 54, 0.6);
-        }
-
-        /* 변환 옵션 개선 */
-        .conversion-options {
-            margin-top: 40px;
-            padding: 40px;
-            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-            border-radius: var(--border-radius);
-            border: 1px solid #e2e8f0;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
-        }
-
-        .conversion-options h3 {
-            font-size: 1.6rem;
-            margin-bottom: 30px;
-            color: #2d3748;
-            text-align: center;
-        }
-
-        .conversion-options h3 i {
-            margin-right: 15px;
-            color: #667eea;
-            font-size: 1.8rem;
-        }
-
-        .options-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .option-group {
-            background: white;
-            padding: 25px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: var(--transition);
-        }
-
-        .option-group:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-        }
-
-        .option-group label {
-            display: block;
-            margin-bottom: 12px;
-            font-weight: 600;
-            color: #4a5568;
-            font-size: 1.1rem;
-        }
-
-        .format-select, .quality-slider {
-            width: 100%;
-            padding: 15px 20px;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 1rem;
-            background: white;
-            transition: var(--transition);
-        }
-
-        .format-select:focus, .quality-slider:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
-        }
-
-        /* 진행 상태 개선 */
-        .progress-section {
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 15px;
-            background: #e2e8f0;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(45deg, var(--success-color), #38a169);
-            width: 0%;
-            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 8px;
-            position: relative;
-        }
-
-        .progress-fill::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
-            animation: progress-shine 2s ease-in-out infinite;
-        }
-
-        @keyframes progress-shine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .progress-text {
-            color: #4a5568;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        /* 미리보기 섹션 개선 */
-        .preview-section {
-            margin-top: 40px;
-            padding: 40px;
-            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-            border-radius: var(--border-radius);
-            border: 1px solid #e2e8f0;
-        }
-
-        .preview-container {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            gap: 40px;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-
-        .image-preview {
-            text-align: center;
-            background: white;
-            padding: 25px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: var(--transition);
-        }
-
-        .image-preview:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .image-preview h4 {
-            margin-bottom: 20px;
-            color: #4a5568;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        .image-wrapper {
-            position: relative;
-            display: inline-block;
-            max-width: 100%;
-        }
-
-        .image-wrapper img {
-            max-width: 100%;
-            max-height: 300px;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-            transition: var(--transition);
-        }
-
-        .image-wrapper:hover img {
-            transform: scale(1.02);
-        }
-
-        .image-info {
-            margin-top: 20px;
-            padding: 15px;
-            background: #f7fafc;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            color: #718096;
-            border-left: 4px solid #667eea;
-            text-align: left;
-        }
-
-        .conversion-arrow {
-            font-size: 3rem;
-            color: #667eea;
-            animation: pulse-arrow 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse-arrow {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.1); }
-        }
-
-        /* 토스트 메시지 개선 */
-        .toast {
-            position: fixed;
-            top: 30px;
-            right: 30px;
-            background: #2d3748;
-            color: white;
-            padding: 20px 25px;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-            z-index: 1000;
-            transform: translateX(120%);
-            transition: var(--transition);
-            max-width: 400px;
-            backdrop-filter: blur(10px);
-        }
-
-        .toast.show {
-            transform: translateX(0);
-        }
-
-        .toast.success { background: linear-gradient(45deg, var(--success-color), #38a169); }
-        .toast.error { background: linear-gradient(45deg, var(--error-color), #e53e3e); }
-        .toast.warning { background: linear-gradient(45deg, var(--warning-color), #dd6b20); }
-
-        /* 반응형 디자인 개선 */
+        /* 모바일 광고 최적화 */
         @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            
-            .header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .converter-section {
-                padding: 30px 25px;
-            }
-            
-            .upload-area {
-                padding: 40px 25px;
-            }
-            
-            .preview-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .conversion-arrow {
-                transform: rotate(90deg);
-                margin: 20px 0;
-            }
-            
-            .options-grid {
-                grid-template-columns: 1fr;
-            }
-
             .ad-container {
+                margin: 20px 15px;
                 padding: 15px;
-                margin: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 2rem;
             }
             
-            .subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .upload-icon {
-                font-size: 4rem;
-            }
-            
-            .converter-section {
-                padding: 25px 20px;
-            }
-
-            .btn {
-                padding: 12px 25px;
-                font-size: 1rem;
+            .adsbygoogle {
+                min-height: 250px;
             }
         }
 
-        /* 로딩 애니메이션 */
-        .loading-spinner {
-            display: inline-block;
-            width: 25px;
-            height: 25px;
-            border: 3px solid rgba(255,255,255,.3);
-            border-radius: 50%;
-            border-top-color: #fff;
-            animation: spin 1s ease-in-out infinite;
+        /* 성능 향상을 위한 추가 CSS */
+        .container {
+            position: relative;
         }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        /* 로딩 개선 */
+        .lazy-load {
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        /* 페이드 인 애니메이션 */
-        @keyframes fadeInUp {
-            from { 
-                opacity: 0; 
-                transform: translateY(30px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
+        .lazy-load.loaded {
+            opacity: 1;
         }
 
-        .fade-in {
-            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        /* 광고 로딩 중 플레이스홀더 */
+        .ad-placeholder {
+            height: 250px;
+            background: linear-gradient(90deg, #f0f2f5 25%, #e4e6ea 50%, #f0f2f5 75%);
+            background-size: 200% 100%;
+            animation: loading 2s infinite;
+            border-radius: 10px;
         }
 
-        /* 성능 최적화를 위한 GPU 가속 */
-        .upload-area, .converter-section, .image-preview, .btn {
-            will-change: transform;
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <!-- 상단 광고 영역 -->
-        <div class="ad-container">
-            <div class="ad-label">Advertisement</div>
-            <!-- Google AdSense 광고 삽입 위치 -->
+        <div class="ad-container ad-spacing">
+            <div class="ad-label">💡 Advertisement</div>
+            <!-- Google AdSense 광고 삽입 위치 - 상단 -->
             <ins class="adsbygoogle"
                  style="display:block"
-                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
-                 data-ad-slot="1234567890"
+                 data-ad-client="ca-pub-3796109238388816"
+                 data-ad-slot="4339185974"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
         </div>
 
         <!-- 헤더 -->
         <header class="header">
-            <span class="icon">🔄</span>
-            <h1>WebP 이미지 변환기</h1>
+            <h1><i class="fas fa-exchange-alt"></i> WebP 이미지 변환기</h1>
             <p class="subtitle">WebP ↔ JPG, PNG, GIF 포맷을 자유롭게 변환하세요<br>빠르고 안전한 온라인 변환 도구</p>
         </header>
 
@@ -680,61 +154,41 @@
                     <p class="upload-text">지원 포맷: WebP, JPG, JPEG, PNG, GIF</p>
                     <p class="file-limit">최대 파일 크기: 10MB | 완전히 안전한 브라우저 변환</p>
                     <input type="file" id="fileInput" accept=".webp,.jpg,.jpeg,.png,.gif" multiple hidden>
-                    <button type="button" class="btn upload-btn" onclick="document.getElementById('fileInput').click()">
-                        <i class="fas fa-folder-open"></i> 파일 선택하기
+                    <button type="button" class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                        <i class="fas fa-folder-open"></i> 파일 선택
                     </button>
                 </div>
             </div>
 
             <!-- 변환 옵션 -->
             <div class="conversion-options" id="conversionOptions" style="display: none;">
-                <h3><i class="fas fa-cogs"></i>변환 설정</h3>
-                <div class="options-grid">
-                    <div class="option-group">
-                        <label for="outputFormat">
-                            <i class="fas fa-exchange-alt" style="color: #667eea; margin-right: 8px;"></i>
-                            변환할 포맷
-                        </label>
-                        <select id="outputFormat" class="format-select">
-                            <option value="webp">WebP (최고 압축률)</option>
-                            <option value="jpeg">JPEG (호환성 우수)</option>
-                            <option value="png">PNG (투명 지원)</option>
-                            <option value="gif">GIF (애니메이션)</option>
-                        </select>
-                    </div>
-
-                    <div class="option-group">
-                        <label for="quality">
-                            <i class="fas fa-sliders-h" style="color: #48bb78; margin-right: 8px;"></i>
-                            이미지 품질: <span id="qualityValue" style="color: #667eea; font-weight: 700;">90</span>%
-                        </label>
-                        <input type="range" id="quality" min="10" max="100" value="90" class="quality-slider">
-                    </div>
+                <h3><i class="fas fa-cogs"></i> 변환 설정</h3>
+                <div class="format-selector">
+                    <label for="outputFormat">변환할 포맷:</label>
+                    <select id="outputFormat" class="format-select">
+                        <option value="webp">WebP</option>
+                        <option value="jpeg">JPEG</option>
+                        <option value="png">PNG</option>
+                        <option value="gif">GIF</option>
+                    </select>
                 </div>
 
-                <div style="text-align: center;">
-                    <button id="convertBtn" class="btn convert-btn">
-                        <i class="fas fa-magic"></i> 변환 시작하기
-                    </button>
+                <div class="quality-selector">
+                    <label for="quality">이미지 품질: <span id="qualityValue">90</span>%</label>
+                    <input type="range" id="quality" min="10" max="100" value="90" class="quality-slider">
                 </div>
-            </div>
 
-            <!-- 진행 상태 -->
-            <div class="progress-section" id="progressSection" style="display: none;">
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progressFill"></div>
-                </div>
-                <p class="progress-text" id="progressText">변환 준비 중...</p>
+                <button id="convertBtn" class="convert-btn">
+                    <i class="fas fa-magic"></i> 변환 시작
+                </button>
             </div>
 
             <!-- 미리보기 및 결과 -->
             <div class="preview-section" id="previewSection" style="display: none;">
-                <h3 style="text-align: center; margin-bottom: 30px; font-size: 1.8rem;">
-                    <i class="fas fa-eye" style="color: #667eea; margin-right: 10px;"></i>변환 결과
-                </h3>
+                <h3><i class="fas fa-eye"></i> 미리보기</h3>
                 <div class="preview-container">
                     <div class="image-preview">
-                        <h4><i class="fas fa-image" style="color: #718096; margin-right: 8px;"></i>원본 이미지</h4>
+                        <h4>원본 이미지</h4>
                         <div class="image-wrapper">
                             <img id="originalImage" alt="원본 이미지">
                             <div class="image-info" id="originalInfo"></div>
@@ -744,7 +198,7 @@
                         <i class="fas fa-arrow-right"></i>
                     </div>
                     <div class="image-preview">
-                        <h4><i class="fas fa-check-circle" style="color: #48bb78; margin-right: 8px;"></i>변환된 이미지</h4>
+                        <h4>변환된 이미지</h4>
                         <div class="image-wrapper">
                             <img id="convertedImage" alt="변환된 이미지">
                             <div class="image-info" id="convertedInfo"></div>
@@ -752,49 +206,119 @@
                     </div>
                 </div>
                 
-                <div style="text-align: center;">
-                    <button id="downloadBtn" class="btn download-btn">
+                <div class="download-section">
+                    <button id="downloadBtn" class="download-btn">
                         <i class="fas fa-download"></i> 다운로드
                     </button>
-                    <button id="resetBtn" class="btn reset-btn">
+                    <button id="resetBtn" class="reset-btn">
                         <i class="fas fa-refresh"></i> 다시 시작
+                    </button>
+                </div>
+            </div>
+
+            <!-- 진행 상태 -->
+            <div class="progress-section" id="progressSection" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p class="progress-text" id="progressText">변환 중...</p>
+            </div>
+
+            <!-- 여러 파일 처리 -->
+            <div class="batch-section" id="batchSection" style="display: none;">
+                <h3><i class="fas fa-layer-group"></i> 배치 변환</h3>
+                <div class="file-list" id="fileList"></div>
+                <div class="batch-controls">
+                    <button id="convertAllBtn" class="convert-all-btn">
+                        <i class="fas fa-bolt"></i> 모두 변환
+                    </button>
+                    <button id="downloadAllBtn" class="download-all-btn" style="display: none;">
+                        <i class="fas fa-download"></i> 모두 다운로드
                     </button>
                 </div>
             </div>
         </main>
 
-        <!-- 중간 광고 영역 -->
-        <div class="ad-container">
-            <div class="ad-label">Advertisement</div>
-            <!-- Google AdSense 광고 삽입 위치 -->
+        <!-- 중간 광고 영역 (변환 완료 후 보이는 위치) -->
+        <div class="ad-container ad-spacing">
+            <div class="ad-label">💡 Advertisement</div>
+            <!-- Google AdSense 광고 삽입 위치 - 중간 -->
             <ins class="adsbygoogle"
                  style="display:block"
-                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
-                 data-ad-slot="0987654321"
+                 data-ad-client="ca-pub-3796109238388816"
+                 data-ad-slot="4339185974"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
         </div>
 
+        <!-- 사용법 안내 -->
+        <section class="guide-section">
+            <h3><i class="fas fa-info-circle"></i> 사용법</h3>
+            <div class="guide-grid">
+                <div class="guide-item">
+                    <i class="fas fa-upload"></i>
+                    <h4>1. 파일 업로드</h4>
+                    <p>이미지를 드래그하거나 파일 선택 버튼을 클릭하여 업로드하세요.</p>
+                </div>
+                <div class="guide-item">
+                    <i class="fas fa-cog"></i>
+                    <h4>2. 포맷 선택</h4>
+                    <p>변환하고 싶은 이미지 포맷과 품질을 선택하세요.</p>
+                </div>
+                <div class="guide-item">
+                    <i class="fas fa-magic"></i>
+                    <h4>3. 변환 실행</h4>
+                    <p>변환 시작 버튼을 클릭하면 즉시 변환이 시작됩니다.</p>
+                </div>
+                <div class="guide-item">
+                    <i class="fas fa-download"></i>
+                    <h4>4. 다운로드</h4>
+                    <p>변환된 이미지를 미리보기하고 다운로드하세요.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 지원 포맷 정보 -->
+        <section class="format-info">
+            <h3><i class="fas fa-file-image"></i> 지원 포맷</h3>
+            <div class="format-grid">
+                <div class="format-card">
+                    <i class="fab fa-google"></i>
+                    <h4>WebP</h4>
+                    <p>Google이 개발한 차세대 이미지 포맷으로 높은 압축률과 우수한 품질을 제공합니다.</p>
+                </div>
+                <div class="format-card">
+                    <i class="fas fa-image"></i>
+                    <h4>JPEG</h4>
+                    <p>가장 널리 사용되는 이미지 포맷으로 사진에 최적화되어 있습니다.</p>
+                </div>
+                <div class="format-card">
+                    <i class="fas fa-file-image"></i>
+                    <h4>PNG</h4>
+                    <p>투명 배경을 지원하며 무손실 압축을 제공하는 포맷입니다.</p>
+                </div>
+                <div class="format-card">
+                    <i class="fas fa-play-circle"></i>
+                    <h4>GIF</h4>
+                    <p>애니메이션을 지원하며 간단한 그래픽에 적합한 포맷입니다.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- 하단 광고 영역 -->
-        <div class="ad-container">
-            <div class="ad-label">Advertisement</div>
-            <!-- Google AdSense 광고 삽입 위치 -->
+        <div class="ad-container ad-spacing">
+            <div class="ad-label">💡 Advertisement</div>
+            <!-- Google AdSense 광고 삽입 위치 - 하단 -->
             <ins class="adsbygoogle"
                  style="display:block"
-                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
-                 data-ad-slot="1122334455"
+                 data-ad-client="ca-pub-3796109238388816"
+                 data-ad-slot="4339185974"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
         </div>
 
         <!-- 푸터 -->
-        <footer style="text-align: center; color: white; padding: 40px 0; margin-top: 40px;">
+        <footer class="footer">
             <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 20px; backdrop-filter: blur(10px);">
                 <p style="font-size: 1.1rem; margin-bottom: 10px;">&copy; 2025 WebP 이미지 변환기. 모든 변환은 브라우저에서 안전하게 처리됩니다.</p>
                 <p style="font-size: 0.95rem; opacity: 0.8;">업로드된 파일은 서버로 전송되지 않으며, 개인정보가 완전히 보호됩니다.</p>
@@ -805,12 +329,30 @@
         </footer>
     </div>
 
-    <!-- JavaScript는 기존과 동일하지만 성능 최적화 적용 -->
+    <!-- 기존 JavaScript 파일 (정상 작동하는 것) -->
     <script src="js/converter.js"></script>
     
+    <!-- AdSense 광고 활성화 스크립트 -->
+    <script>
+        // DOM 로딩 완료 후 AdSense 광고 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            // AdSense 광고 로딩 지연 (성능 향상)
+            setTimeout(function() {
+                try {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } catch(e) {
+                    console.log('AdSense loading delayed:', e);
+                }
+            }, 1000);
+        });
+
+        // Google Analytics 4 (선택사항 - 실제 ID로 교체)
+        // gtag('config', 'G-실제발급번호');
+    </script>
+
     <!-- Cloudflare Analytics (선택사항) -->
-    <!-- 
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_CF_TOKEN"}'></script>
-    -->
+    <!-- <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_CF_TOKEN"}'></script> -->
 </body>
 </html>
